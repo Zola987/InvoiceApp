@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap");
+
+
+
+/*---- Mixin ----*/
+
+@mixin font-size(
+  $font-size,
+  $font-weight: normal,
+  $letter-spacing: normal,
+  $line-height: normal
+) {
+  font-size: $font-size * 1px;
+
+  @if $line-height==normal {
+    line-height: normal;
+  } @else {
+    line-height: $line-height * 1px;
+  }
+
+  @if $letter-spacing==normal {
+    letter-spacing: normal;
+  } @else {
+    letter-spacing: $letter-spacing * 1px;
+  }
+
+  @if ($font-weight==normal) {
+    font-weight: normal;
+  } @else {
+    font-weight: $font-weight;
+  }
+}

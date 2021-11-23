@@ -1,0 +1,404 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: "Spartan", sans-serif;
+  background-color: $bg-color-body;
+
+  &.dark {
+    background-color: $bg-color-body-dark;
+  }
+}
+
+h1,
+h2,
+h3,
+p,
+span,
+li,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  @include font-size(32, bold, -1, 36);
+  @media (max-width: 750px) {
+    @include font-size(20, bold, -0.42, 32);
+  }
+}
+
+h2 {
+  @include font-size(20, bold, -0.63, 22);
+}
+
+input,
+h3 {
+  @include font-size(15, bold, -0.8, 24);
+
+  &.total-price {
+    @include font-size(16, bold, -0.8, 24);
+  }
+  @media (max-width: 750px) {
+    @include font-size(12, bold, -0.25, 15);
+  }
+}
+
+.two {
+  @include font-size(12, bold, -0.25, 15);
+}
+
+.body1 {
+  @include font-size(12, 500, -0.25, 15);
+}
+
+.body2 {
+  @include font-size(11, 500, -0.23, 18);
+}
+
+a {
+  text-decoration: none;
+}
+
+body.dark h1,
+body.dark h3,
+body.dark h2,
+body.dark .two,
+body.dark input {
+  color: $white;
+}
+
+/* Helpers Class */
+
+.container {
+  max-width: 730px;
+  margin: auto;
+  width: 100%;
+  @media (max-width: 995px) {
+    max-width: 672px;
+  }
+  @media (max-width: 750px) {
+    max-width: 327px;
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-direction-colomun {
+  flex-direction: column;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.padding-top-72 {
+  padding-top: 72px;
+  @media (max-width: 995px) {
+    padding-top: 136px;
+  }
+}
+
+.margin-48 {
+  margin-top: 48px;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.edit-form-page {
+  position: absolute;
+  max-height: 1424px;
+  width: 719px;
+  background-color: $white;
+  height: auto;
+  z-index: 2;
+  display: none;
+  overflow-y: auto;
+
+  @media (max-width: 995px) {
+    top: 80px;
+    padding: 56px;
+    width: 616px;
+  }
+
+  @media (max-width: 750px) {
+    padding: 0 24px 150px;
+    width: 100%;
+  }
+
+  &.display {
+    display: block;
+  }
+  .edit-form-content {
+    padding: 56px 0 56px 156px;
+    @media (max-width: 995px) {
+      padding: 0;
+    }
+    @media (max-width: 750px) {
+      padding: 143px 0 0;
+    }
+
+    .header-edit-form {
+      margin-bottom: 48px;
+      h2 {
+        span {
+          color: $purple-01;
+        }
+      }
+    }
+
+    .bill-form {
+      @media (max-width: 750px) {
+        width: 327px;
+        margin: auto;
+      }
+      h3.two {
+        color: $purple-01;
+        margin-bottom: 24px;
+      }
+      .body1 {
+        color: $purple-01;
+      }
+
+      label {
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .data-control {
+        width: 100%;
+        max-width: 504px;
+        margin-bottom: 24px;
+        border-radius: 4px;
+        input {
+          width: 100%;
+          padding: 17px;
+        }
+
+        &.row {
+          .data-input {
+            flex: 0 0 33.33%;
+            max-width: 152px;
+            @media (max-width: 750px) {
+              flex: 0 0 50%;
+              margin-bottom: 24px;
+            }
+          }
+        }
+
+        .date-control {
+          @media (max-width: 750px) {
+            flex: 0 0 100%;
+            width: 100%;
+            margin-bottom: 24px;
+          }
+        }
+
+        .payement-terms {
+          @media (max-width: 750px) {
+            flex: 0 0 100%;
+            width: 100%;
+            margin-bottom: 24px;
+          }
+        }
+      }
+
+      .list-items {
+        width: 506px;
+        @media (max-width: 750px) {
+          width: 327px;
+        }
+        .item-list-header {
+          font-size: 18px;
+          font-weight: bold;
+          line-height: 32px;
+          letter-spacing: -0.38px;
+          color: #777f98;
+          margin-bottom: 16px;
+          @media (max-width: 750px) {
+            margin-top: 66px;
+          }
+        }
+
+        .list-items-header {
+          @media (max-width: 750px) {
+            display: none;
+          }
+        }
+
+        .item-name {
+          width: 214px;
+          @media (max-width: 750px) {
+            flex: 0 0 100%;
+            width: 100%;
+            margin-bottom: 24px;
+          }
+        }
+
+        input {
+          padding: 17px;
+          outline: none;
+        }
+
+        .item-qty {
+          width: 46px;
+        }
+
+        .item-price {
+          width: 100px;
+        }
+
+        .total-price {
+          width: 56px;
+        }
+        .delete-button {
+          width: 13px;
+          cursor: pointer;
+        }
+
+        .price-control {
+          width: 272px;
+        }
+
+        .list-item {
+          margin-bottom: 18px;
+        }
+
+        .button-add-item {
+          width: 504px;
+          height: 48px;
+          margin: 0 auto 40px;
+          cursor: pointer;
+          background-color: $edit-bg;
+          border-radius: 24px;
+          @media (max-width: 750px) {
+            width: 327px;
+          }
+          span {
+            margin-left: 5px;
+          }
+        }
+      }
+
+      .btn-control-edit {
+        text-align: right;
+        @media (max-width: 750px) {
+          position: fixed;
+          bottom: 0;
+          width: 100%;
+          left: 0;
+          height: 91px;
+          background-color: white;
+          line-height: 91px;
+          z-index: 10000000;
+          padding-right: 26px;
+        }
+
+        .btn {
+          outline: none;
+          border-radius: 24px;
+          border: none;
+          cursor: pointer;
+          height: 48px;
+        }
+        .save-btn {
+          width: 138px;
+
+          color: $white;
+          background-color: $mark-as-paid-bg;
+        }
+
+        .cancel-btn {
+          width: 96px;
+          color: $purple-01;
+          background-color: $edit-bg;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+
+body.dark {
+  .edit-form-page {
+    background-color: $edit-bg-dark;
+    .edit-form-content {
+      .header-edit-form {
+        h2 {
+          span {
+            color: $purple-02;
+          }
+        }
+      }
+
+      .bill-form {
+        h3.two {
+          color: $mark-as-paid-bg;
+        }
+
+        .body1 {
+          color: $hover-color-add-item;
+        }
+        .data-control {
+          input {
+            background-color: $side-bar-bg-dark;
+            outline: 1px solid $edit-bg-dark;
+            border: 1px solid $edit-bg-dark;
+          }
+        }
+        .list-items {
+          color: $hover-color-add-item;
+          .list-item {
+            input {
+              background-color: $side-bar-bg-dark;
+              outline: 1px solid $edit-bg-dark;
+              border: 1px solid $edit-bg-dark;
+            }
+          }
+
+          .button-add-item {
+            background-color: $side-bar-bg-dark;
+          }
+        }
+        .btn-control-edit {
+          @media (max-width: 750px) {
+            background-color: $side-bar-bg-dark;
+          }
+          .cancel-btn {
+            background-color: $side-bar-bg-dark;
+            color: $hover-color-add-item;
+          }
+        }
+      }
+    }
+  }
+}

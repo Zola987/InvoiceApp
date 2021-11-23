@@ -1,0 +1,258 @@
+@import "../../styles/variables.scss";
+
+.invoices {
+  .content-invoices {
+    .nav-filter {
+      margin-bottom: 65px;
+      .heading {
+        .heading-sous-title {
+          color: $purple-02;
+          margin-top: 8px;
+        }
+      }
+
+      .filter-add-content {
+        .select {
+          position: relative;
+          margin-right: 41px;
+          z-index: 1;
+          .selected-style {
+            width: 118px;
+            padding: 15px 0;
+            cursor: pointer;
+          }
+          .data-select {
+            position: absolute;
+            top: 40px;
+            background-color: $white;
+            border-radius: 8px;
+            display: none;
+            &.active {
+              display: block;
+            }
+            li {
+              width: 118px;
+              padding: 15px 8px;
+              cursor: pointer;
+
+              &:hover {
+                background: #e1e1e1;
+              }
+            }
+          }
+        }
+
+        .add-new-invoice {
+          width: 150px;
+          height: 48px;
+          background-color: $mark-as-paid-bg;
+          border-radius: 24px;
+          cursor: pointer;
+          .box-add-icon {
+            height: 32px;
+            width: 32px;
+            border-radius: 50%;
+            background-color: $white;
+            margin-left: 8px;
+          }
+          h3 {
+            color: $white;
+            margin-left: 16px;
+          }
+        }
+      }
+    }
+
+    .content-lists {
+      .content-item {
+        height: 72px;
+        background-color: $white;
+        padding: 0 32px;
+        box-shadow: $shadow;
+        border-radius: 8px;
+        &:not(:last-of-type) {
+          margin-bottom: 16px;
+        }
+        @media (max-width: 750px) {
+          height: 134px;
+          position: relative;
+          padding: 24px;
+        }
+
+        .date-price-info {
+          // width: 448px;
+          .commande-number {
+            width: 103px;
+            font-size: 12px;
+            span {
+              color: $purple-01;
+            }
+            @media (max-width: 750px) {
+              flex: 1 1 50%;
+              width: 50%;
+            }
+          }
+          .date {
+            width: 151px;
+            color: $purple-01;
+            span {
+              color: $purple-02;
+            }
+          }
+
+          .fullName {
+            width: 162px;
+            @media (max-width: 750px) {
+              flex: 1 1 100%;
+              width: 100%;
+            }
+          }
+
+          .total-price {
+            font-size: 16px;
+
+            @media (max-width: 750px) {
+              flex: 1 1 100%;
+              width: 100%;
+            }
+          }
+        }
+
+        .paid-link {
+          width: 128px;
+          margin-left: 32px;
+          .status {
+            width: 104px;
+            height: 40px;
+            position: relative;
+            border-radius: 6px;
+            @media (max-width: 750px) {
+              position: absolute;
+              right: 22px;
+              top: 62px;
+            }
+
+            &.paid {
+              background-color: $paid-bg;
+              color: $paid-color;
+
+              &::before {
+                position: absolute;
+                content: "";
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: $paid-color;
+                left: 22px;
+              }
+            }
+            &.pending {
+              background-color: $pending-bg;
+              color: $pending-color;
+
+              &::before {
+                position: absolute;
+                content: "";
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: $pending-color;
+                left: 10px;
+              }
+            }
+
+            &.draft {
+              background-color: $draft-bg;
+              color: $draft-color;
+
+              &::before {
+                position: absolute;
+                content: "";
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: $draft-color;
+                left: 22px;
+              }
+            }
+          }
+
+          a {
+            @media (max-width: 750px) {
+              position: absolute;
+              right: 18px;
+              bottom: 12px;
+            }
+          }
+        }
+      }
+    }
+
+    .invoices-empty-page {
+      text-align: center;
+      width: 242px;
+      margin: auto;
+      margin-top: 141px;
+      .box-empty-page-info-img {
+        margin-bottom: 64px;
+      }
+
+      .description-info {
+        .description-paragraph {
+          color: $purple-02;
+          width: 210px;
+          margin: auto;
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+}
+
+body.dark {
+  .invoices {
+    .content-invoices {
+      .content-lists {
+        .content-item {
+          background-color: $side-bar-bg-dark;
+          box-shadow: $dark-shadow;
+
+          .date {
+            color: $hover-color-add-item;
+            span {
+              color: $hover-color-add-item;
+            }
+          }
+
+          .fullName {
+            color: $white;
+          }
+
+          .status {
+            &.paid {
+              background-color: rgba(51, 214, 159, 0.1);
+              h3 {
+                color: $paid-color;
+              }
+            }
+            &.pending {
+              background-color: rgba(255, 127, 0, 0.1);
+              h3 {
+                color: $pending-color;
+              }
+            }
+            &.draft {
+              background-color: rgba(55, 59, 83, 0.1);
+              &::before {
+                background-color: $hover-color-add-item;
+              }
+              h3 {
+                color: $hover-color-add-item;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
